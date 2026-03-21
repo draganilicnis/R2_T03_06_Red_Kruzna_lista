@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Bingo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-21 11:54:19 pre podne"/>
+        <attribute name="created" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MTE6Mjc6MzUgcHJlIHBvZG5lOzI5NDA="/>
+        <attribute name="edited" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MTE6NTQ6MTkgcHJlIHBvZG5lOzQ7MzA1Mw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <assign variable="A" expression="Null"/>
+            <assign variable="V" expression="0"/>
+            <assign variable="B" expression="1"/>
+            <input variable="C"/>
+            <while expression="C != Null">
+                <if expression="C == &quot;U&quot;">
+                    <then>
+                        <call expression="DodajNovogVodjuUKolo(B)"/>
+                        <assign variable="V" expression="B"/>
+                        <assign variable="B" expression="B + 1"/>
+                    </then>
+                    <else>
+                        <if expression="C == &quot;S&quot;">
+                            <then>
+                                <assign variable="V" expression="APrenesiSesirIspred(V)"/>
+                                <assign variable="B" expression="B"/>
+                            </then>
+                            <else>
+                                <if expression="C == &quot;I&quot;">
+                                    <then>
+                                        <assign variable="V" expression="AIzbaciVodjuIzKola(V)"/>
+                                        <assign variable="B" expression="B - 1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <input variable="C"/>
+            </while>
+            <call expression="KoloIspisi(A)"/>
+        </body>
+    </function>
+</flowgorithm>
