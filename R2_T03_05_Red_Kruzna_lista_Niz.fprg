@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Bingo"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-03-21 01:47:20 po podne"/>
+        <attribute name="created" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MTE6Mjc6MzUgcHJlIHBvZG5lOzI5NDA="/>
+        <attribute name="edited" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MDE6NDc6MjAgcG8gcG9kbmU7MjI7Mjk5MA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="A" type="Integer" array="True" size="5"/>
+            <declare name="C" type="String" array="False" size=""/>
+            <declare name="V" type="Integer" array="False" size=""/>
+            <declare name="B" type="Integer" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="p" type="Integer" array="False" size=""/>
+            <assign variable="V" expression="0"/>
+            <assign variable="B" expression="0"/>
+            <for variable="i" start="0" end="9" direction="inc" step="1">
+                <input variable="C"/>
+                <if expression="C == &quot;U&quot;">
+                    <then>
+                        <for variable="p" start="B - 1" end="V" direction="dec" step="1">
+                            <assign variable="A[p + 1]" expression="A[p]"/>
+                        </for>
+                        <assign variable="A[V]" expression="B + 1"/>
+                        <assign variable="B" expression="B + 1"/>
+                    </then>
+                    <else>
+                        <if expression="C == &quot;S&quot;">
+                            <then>
+                                <if expression="V == 0">
+                                    <then>
+                                        <assign variable="V" expression="B - 1"/>
+                                    </then>
+                                    <else>
+                                        <assign variable="V" expression="V - 1"/>
+                                    </else>
+                                </if>
+                            </then>
+                            <else>
+                                <if expression="C == &quot;I&quot;">
+                                    <then>
+                                        <for variable="p" start="V" end="B - 2" direction="inc" step="1">
+                                            <assign variable="A[p]" expression="A[p + 1]"/>
+                                        </for>
+                                        <assign variable="A[B]" expression="-1"/>
+                                        <assign variable="B" expression="B - 1"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+            </for>
+            <for variable="i" start="V" end="0" direction="dec" step="1">
+                <output expression="A[i]" newline="True"/>
+            </for>
+            <for variable="i" start="B - 1" end="V + 1" direction="dec" step="1">
+                <output expression="A[i]" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
