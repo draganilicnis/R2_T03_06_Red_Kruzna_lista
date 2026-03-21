@@ -40,7 +40,7 @@ class R2_T03_05_Red_Kruzna_lista
 
         while (a.Count > 0)                             // Sve dok ima elemenata u linkovanoj listi (igraca u kolu)
         {
-            Console.Write(a.Last.Value + " ");          // Stampamo vrednost poslednjeg elementa iz linkovane liste (FIFO)
+            Console.Write(a.Last.Value + " ");          // Stampamo vrednost poslednjeg elementa iz linkovane liste (FIFO) : 1 2 4 5
             a.RemoveLast();                             // Izbacujemo poslednji element iz linkovane liste
         }
     }
