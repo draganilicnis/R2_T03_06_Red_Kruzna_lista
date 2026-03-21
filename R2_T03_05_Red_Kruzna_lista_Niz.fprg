@@ -4,18 +4,21 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Bingo"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-03-21 05:59:13 po podne"/>
+        <attribute name="saved" value="2026-03-21 07:03:18 po podne"/>
         <attribute name="created" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MTE6Mjc6MzUgcHJlIHBvZG5lOzI5NDA="/>
-        <attribute name="edited" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MDU6NTk6MTMgcG8gcG9kbmU7MjM7MzAwMA=="/>
+        <attribute name="edited" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MDc6MDM6MTggcG8gcG9kbmU7Mjg7MzAwMQ=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
         <body>
-            <declare name="A" type="Integer" array="True" size="5"/>
+            <declare name="A" type="Integer" array="True" size="6"/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <for variable="i" start="0" end="5" direction="inc" step="1">
+                <assign variable="A[i]" expression="-1"/>
+            </for>
             <declare name="C" type="String" array="False" size=""/>
             <declare name="V" type="Integer" array="False" size=""/>
             <declare name="B" type="Integer" array="False" size=""/>
-            <declare name="i" type="Integer" array="False" size=""/>
             <declare name="p" type="Integer" array="False" size=""/>
             <assign variable="V" expression="0"/>
             <assign variable="B" expression="0"/>
