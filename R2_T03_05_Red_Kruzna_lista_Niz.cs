@@ -28,7 +28,7 @@ class R2_T03_05_Red_Kruzna_lista_Niz
                 b--;                                    // Dekrementiramo ukupan broj igraca u kolu (za potencijalno sledeceg novog igraca)
                 for (int p = v; p < b; p++)             // Pomeramo sve igrace koji su iza vodje za jedno mesto ulevo
                     a[p] = a[p + 1];            
-                a[b] = -1;                              // Oznacavamo da iza pozicije b nema vise igraca u kolu
+                a[b] = -1;                              // Oznacavamo da iza pozicije b nema vise igraca u kolu (nije neophodno, ali moze da bude korisno)
                 if (v == b) v = 0;
             }
         }
