@@ -1,5 +1,5 @@
 using System;
-using System.Collections.Generic;                       // Zbog LinkedList
+// using System.Collections.Generic;                       // Zbog LinkedList
 class R2_T03_05_Red_Kruzna_lista_Niz
 {
     static void Main()
@@ -25,11 +25,11 @@ class R2_T03_05_Red_Kruzna_lista_Niz
             }
             else if (c == 'i')                          // Izbacicanje vodje iz kola
             {
-                b--;                                    // Dekrementiramo ukupan broj igraca u kolu (za potencijalno sledeceg novog igraca)
+                if (b > 0) b--;                         // Dekrementiramo ukupan broj igraca u kolu (za potencijalno sledeceg novog igraca)
                 for (int p = v; p < b; p++)             // Pomeramo sve igrace koji su iza vodje za jedno mesto ulevo
-                    a[p] = a[p + 1];            
+                    a[p] = a[p + 1];
                 a[b] = -1;                              // Oznacavamo da iza pozicije b nema vise igraca u kolu (nije neophodno, ali moze da bude korisno)
-                if (v == b) v = 0;
+                if (v == b) v = 0;                      // Ako je vodja bio na kraju (desno) kolekcije
             }
         }
 
