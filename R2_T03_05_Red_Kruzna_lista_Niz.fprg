@@ -4,9 +4,9 @@
         <attribute name="name" value=""/>
         <attribute name="authors" value="Bingo"/>
         <attribute name="about" value=""/>
-        <attribute name="saved" value="2026-03-21 01:47:20 po podne"/>
+        <attribute name="saved" value="2026-03-21 05:59:13 po podne"/>
         <attribute name="created" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MTE6Mjc6MzUgcHJlIHBvZG5lOzI5NDA="/>
-        <attribute name="edited" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MDE6NDc6MjAgcG8gcG9kbmU7MjI7Mjk5MA=="/>
+        <attribute name="edited" value="QmluZ287RFVTQU4zOzIwMjYtMDMtMjE7MDU6NTk6MTMgcG8gcG9kbmU7MjM7MzAwMA=="/>
     </attributes>
     <function name="Main" type="None" variable="">
         <parameters/>
@@ -23,11 +23,11 @@
                 <input variable="C"/>
                 <if expression="C == &quot;U&quot;">
                     <then>
+                        <assign variable="B" expression="B + 1"/>
                         <for variable="p" start="B - 1" end="V" direction="dec" step="1">
                             <assign variable="A[p + 1]" expression="A[p]"/>
                         </for>
-                        <assign variable="A[V]" expression="B + 1"/>
-                        <assign variable="B" expression="B + 1"/>
+                        <assign variable="A[V]" expression="B"/>
                     </then>
                     <else>
                         <if expression="C == &quot;S&quot;">
@@ -44,11 +44,17 @@
                             <else>
                                 <if expression="C == &quot;I&quot;">
                                     <then>
-                                        <for variable="p" start="V" end="B - 2" direction="inc" step="1">
+                                        <assign variable="B" expression="B - 1"/>
+                                        <for variable="p" start="V" end="B - 1" direction="inc" step="1">
                                             <assign variable="A[p]" expression="A[p + 1]"/>
                                         </for>
                                         <assign variable="A[B]" expression="-1"/>
-                                        <assign variable="B" expression="B - 1"/>
+                                        <if expression="V == B">
+                                            <then>
+                                                <assign variable="V" expression="0"/>
+                                            </then>
+                                            <else/>
+                                        </if>
                                     </then>
                                     <else/>
                                 </if>
