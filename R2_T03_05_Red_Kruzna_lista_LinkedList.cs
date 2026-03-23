@@ -11,7 +11,7 @@ class R2_T03_05_Red_Kruzna_lista
             char c = s[i];  
             if (c == 'u')                       // Dodavanje novog igraca: Nov igrac se dodaje na prvo mesto u kolo ispred vodje i postaje vodja 
                 a.AddFirst(a.Count + 1);                
-            else if (c == 'i' && a.Count > 0)   // Izbacivanje vodje iz kola (prvog elementa). Vodja je igracu iza starog (koji je bio na 2. poziciji)
+            else if (c == 'i' && a.Count > 0)   // Izbacivanje vodje iz kola (prvog elementa). Vodja je igrac iza starog (koji je bio na 2. poziciji)
                 a.RemoveFirst();                    
             else if (c == 's' && a.Count > 0)   // Predavanje sesira narednom igracu (ispred sebe, odnosno poslednjem u kolu)
             {
@@ -21,15 +21,15 @@ class R2_T03_05_Red_Kruzna_lista
             }
         }
 
-        // Prirema za stampanje podataka
+        // Priprema za stampanje podataka
         int v = a.First.Value;                  // Uzimamo vrednost vodje (da bi ga prebacili na kraj liste)
         a.RemoveFirst();                        // Izbacujemo vodju sa pocetka linkovane liste
         a.AddLast(v);                           // Dodajemo vodju na kraj linkovane liste
-        
-        // IZLAZ
+
+        // IZLAZ: 1 2 4 5
         while (a.Count > 0)                     // Sve dok ima elemenata u linkovanoj listi (igraca u kolu)
         {
-            Console.Write(a.Last.Value + " ");  // Stampamo vrednost poslednjeg elementa iz linkovane liste (FIFO) : 1 2 4 5
+            Console.Write(a.Last.Value + " ");  // Stampamo vrednost poslednjeg elementa iz linkovane liste (FIFO)
             a.RemoveLast();                     // Izbacujemo poslednji element iz linkovane liste
         }
     }
