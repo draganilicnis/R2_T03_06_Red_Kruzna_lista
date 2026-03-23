@@ -34,7 +34,7 @@ class R2_T03_05_Red_Kruzna_lista
             }
         }
 
-        int vodja = a.First.Value;                      // Prebacujemo vodju na kraj linkovane liste: Uzimamo vrednost vodje sa
+        int vodja = a.First.Value;                      // Uzimamo vrednost vodje (da bi ga prebacili na kraj liste)
         a.RemoveFirst();                                // Izbacujemo vodju sa pocetka linkovane liste
         a.AddLast(vodja);                               // Dodajemo vodju na kraj linkovane liste
 
